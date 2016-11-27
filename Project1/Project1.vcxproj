@@ -115,13 +115,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Gateway_Historiador.cpp" />
     <ClCompile Include="ServidorAplicacao.cpp" />
     <ClCompile Include="Servidor_Historiador.cpp" />
+    <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Gateway_Historiador.h" />
+    <ClInclude Include="memoria_compartilhada_gateway_servidor.hpp" />
     <ClInclude Include="Servidor_Historiador.h" />
+    <ClInclude Include="util.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
