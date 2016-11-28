@@ -7,9 +7,9 @@
 using namespace std;
 using namespace boost;
 
-bool get_args(string msg, vector<string>& values)
+bool get_args(string& msg, vector<string>& values)
 {
-	const char* pattern("-?[0-9]*\\.?[0-9]+");
+	const char* pattern("\\d+");
 
 	boost::regex re(pattern);
 

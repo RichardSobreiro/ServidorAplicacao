@@ -1,20 +1,26 @@
+#include <cstdlib>
 #include <iostream>
-// Bibliotecas Boost
-#include <boost/thread.hpp>
-// Bibliotecas do projeto
+#include <boost/bind.hpp>
+#include <boost/smart_ptr.hpp>
+#include <boost/asio.hpp>
+#include <boost/thread/thread.hpp>
+
 #include "gateway_historiador.h"
 #include "Servidor_Historiador.h"
+#include "servidor_tcp.hpp"
 
-using namespace std;
-
-int main()
+int main(int argc, char* argv[])
 {
-	//boost::thread thread_gateway_historiador{ thread_procedimento_gateway_historiador };
-	boost::thread thread_servidor_historiador{ thread_procedimento_servidor_historiador };
+	try
+	{
+		boost::asio::io_service io_service;
 
-	//thread_gateway_historiador.join();
-	thread_servidor_historiador.join();
+		server(io_service, PORTA);
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << "Excecao: " << e.what() << std::endl;
+	}
 
-	system("PAUSE");
 	return 0;
 }

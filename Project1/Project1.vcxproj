@@ -75,10 +75,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\boost\boost_1_62_0\stage\lib;C:\boost\boost_1_62_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\boost\boost_1_62_0\lib\win32;C:\boost\boost_1_62_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\boost\boost_1_62_0;C:\boost\boost_1_62_0\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\boost\boost_1_62_0;C:\boost\boost_1_62_0\lib\win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <StackReserveSize>50000000</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -117,11 +118,13 @@
   <ItemGroup>
     <ClCompile Include="ServidorAplicacao.cpp" />
     <ClCompile Include="Servidor_Historiador.cpp" />
+    <ClCompile Include="servidor_tcp.cpp" />
     <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="memoria_compartilhada_gateway_servidor.hpp" />
     <ClInclude Include="Servidor_Historiador.h" />
+    <ClInclude Include="servidor_tcp.hpp" />
     <ClInclude Include="util.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
