@@ -18,7 +18,7 @@ bool get_args(string& msg, vector<string>& values)
 
 	for (int i = 0; it != end; ++it, i++)
 	{
-		values.push_back(it->str());
+		values.emplace_back(it->str());
 	}
 
 	if (values.empty()) return false;
@@ -53,4 +53,23 @@ struct position_t& preenche_posiont_t(vector<string> &args)
 	nova_posicao->speed = atoi(args[4].c_str());
 
 	return (*nova_posicao);
+}
+
+void resposta_historical_data_request(struct historical_data_reply_t& hist_reply, string& resposta)
+{
+	resposta.append("HIST");
+
+	if (hist_reply.num_samples_available > 0)
+	{
+		resposta.append(";" + to_string(hist_reply.num_samples_available) + ";" + to_string(hist_reply.data[0].id));
+
+		for each(struct position_t p in hist_reply.data)
+		{
+			resposta.append(";POS;" + to_string(p.timestamp) + ";" + to_string(p.latitude) + ";" + to_string(p.longitude) + ";" + to_string(p.speed) + ";1");
+		}
+	}
+	else 
+	{
+		resposta.append(";0");
+	}
 }

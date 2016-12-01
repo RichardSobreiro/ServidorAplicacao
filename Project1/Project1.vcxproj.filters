@@ -18,20 +18,11 @@
     <ClCompile Include="ServidorAplicacao.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Servidor_Historiador.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="servidor_tcp.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Servidor_Historiador.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="memoria_compartilhada_gateway_servidor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -39,6 +30,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="servidor_tcp.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fila_servidor_historiador.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fila_historiador_servidor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

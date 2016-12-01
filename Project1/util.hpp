@@ -33,8 +33,24 @@ struct active_users_t
 	boost::interprocess::interprocess_mutex mutex;
 };
 
-bool get_args(string msg, vector<string>& values);
+static const unsigned MAX_POSITION_SAMPLES = 30;
+
+struct historical_data_request_t
+{
+	int id;
+	int num_samples;
+};
+
+struct historical_data_reply_t
+{
+	int num_samples_available;
+	position_t data[MAX_POSITION_SAMPLES];
+};
+
+bool get_args(string& msg, vector<string>& values);
 
 struct position_t& preenche_posiont_t(vector<string> &args);
 
 void imprime_position_t(struct position_t& nova_posicao);
+
+void resposta_historical_data_request(struct historical_data_reply_t& hist_reply, string& resposta);
